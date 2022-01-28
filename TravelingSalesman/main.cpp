@@ -152,9 +152,7 @@ void fillPaths() {
 	for (const auto & s : sequences) {
 		pathList.push_back(s->getPath());
 	}
-
 }
-
 
 int main() {
 	init();
