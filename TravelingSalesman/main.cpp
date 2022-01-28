@@ -12,8 +12,7 @@ int choices[NUMBEROFNODES];
 int paths;
 int getWeight(std::wstring , std::wstring);
 
-std::list<Sequence*> sequences;
-std::list<Path*> pathList;
+
 
 int weights[NUMBEROFNODES][NUMBEROFNODES] = {
 {0, 289, 422, 571, 427, 119, 154},
@@ -84,7 +83,8 @@ public:
 		std::cout << std::endl;
 	}
 };
-
+std::list<Sequence*> sequences;
+std::list<Path*> pathList;
 
 void init() {
 	for (int i = 0; i < NUMBEROFNODES; i++)
