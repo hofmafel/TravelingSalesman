@@ -7,7 +7,7 @@
 * Erstellt am 28.01.2022 von Felix Hofmann (Felix.Hofmann@b-tu.de)
 */
 constexpr auto NUMBEROFNODES = 7;
-std::wstring szNodes[NUMBEROFNODES] = { L"Hamburg",L"Berlin", L"Köln", L"Mannheim", L"Düsseldorf", L"Bremen", L"Hannover" };
+std::wstring szNodes[NUMBEROFNODES] = { L"Hamburg",L"Berlin", L"K\x94ln", L"Mannheim", L"D\x81sseldorf", L"Bremen", L"Hannover" };
 int choices[NUMBEROFNODES];
 int paths;
 int getWeight(std::wstring , std::wstring);
@@ -58,7 +58,7 @@ public:
 		}
 		std::wcout << nodes[0];
 		std::cout << std::endl;
-		std::wcout << L"Länge: " << this->weight() << std::endl;
+		std::wcout << L"L\x84nge: " << this->weight() << std::endl;
 	}
 };
 class Sequence {
@@ -167,8 +167,8 @@ int main() {
 			shortestPath = p;
 		}
 	}
-	std::wcout << L"Kürzester Pfad:\n";
+	std::wcout << L"K\x81rzester Pfad:\n";
 	shortestPath->print();
 
-
+	system("pause");
 }
