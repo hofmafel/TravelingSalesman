@@ -169,6 +169,14 @@ int main() {
 	}
 	std::wcout << L"K\x81rzester Pfad:\n";
 	shortestPath->print();
-
+	
+	//Cleanup
+	
+	for (const auto& p : pathList)
+		delete p;
+	
+	for (const auto& s : sequences)
+		delete s;
+	
 	system("pause");
 }
