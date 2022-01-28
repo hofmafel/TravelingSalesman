@@ -3,12 +3,27 @@
 #include <iterator>
 #include <list>
 #include <string>
-
+/**
+* Erstellt am 28.01.2022 von Felix Hofmann (Felix.Hofmann@b-tu.de)
+*/
 constexpr auto NUMBEROFNODES = 7;
 std::wstring szNodes[NUMBEROFNODES] = { L"Hamburg",L"Berlin", L"Köln", L"Mannheim", L"Düsseldorf", L"Bremen", L"Hannover" };
 int choices[NUMBEROFNODES];
 int paths;
 int getWeight(std::wstring , std::wstring);
+
+std::list<Sequence*> sequences;
+std::list<Path*> pathList;
+
+int weights[NUMBEROFNODES][NUMBEROFNODES] = {
+{0, 289, 422, 571, 427, 119, 154},
+{289, 0, 569, 631, 572, 377, 282},
+{422, 569, 0, 247, 47, 312, 287},
+{571, 631, 247, 0, 290, 542, 428},
+{427, 572, 47, 290, 0, 317, 292},
+{119, 377, 312, 542, 317, 0, 125},
+{154, 282, 287, 428, 292, 125, 0}
+};
 
 class Path {
 private:
@@ -70,22 +85,6 @@ public:
 	}
 };
 
-
-std::list<Sequence *> sequences;
-std::list<Path *> pathList;
-
-
-
-
-int weights[NUMBEROFNODES][NUMBEROFNODES] = {
-{0, 289, 422, 571, 427, 119, 154},
-{289, 0, 569, 631, 572, 377, 282},
-{422, 569, 0, 247, 47, 312, 287},
-{571, 631, 247, 0, 290, 542, 428},
-{427, 572, 47, 290, 0, 317, 292},
-{119, 377, 312, 542, 317, 0, 125},
-{154, 282, 287, 428, 292, 125, 0}
-};
 
 void init() {
 	for (int i = 0; i < NUMBEROFNODES; i++)
